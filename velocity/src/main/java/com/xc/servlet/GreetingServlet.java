@@ -16,7 +16,7 @@ import java.util.Properties;
 /**
  * Created by Administrator on 2015/12/3.
  */
-@WebServlet(name="GreetingServlet", urlPatterns = {"/greeting"} )
+@WebServlet(name = "GreetingServlet", urlPatterns = {"/greeting"})
 public class GreetingServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +24,7 @@ public class GreetingServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        Properties properties=new Properties();
+        Properties properties = new Properties();
         properties.load(getServletContext().getResourceAsStream("/WEB-INF/conf/velocity.properties"));
         VelocityEngine velocityEngine = new VelocityEngine(properties);
         velocityEngine.setApplicationAttribute("javax.servlet.ServletContext", request.getServletContext());
