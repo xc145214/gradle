@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by Administrator on 2015/11/30.
  */
-@WebServlet("/helloServlet")
+@WebServlet("HelloServlet")
 public class HelloServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

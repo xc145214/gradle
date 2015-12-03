@@ -1,6 +1,8 @@
 package com.xc;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,18 +11,26 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by Administrator on 2015/12/1.
+ * Created by Administrator on 2015/12/3.
  */
-@WebServlet("/dispatch")
-public class DispatcherServlet extends HttpServlet {
+
+@WebServlet("WorldServlet")
+public class WorldServlet extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/plain;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("context: " + request.getContextPath());
-            out.println("request uri: " + request.getRequestURI());
-            out.println("params: " + request.getParameterMap());
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet HelloServlet</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet HelloServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
+
     }
 
     @Override
