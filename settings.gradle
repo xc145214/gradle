@@ -2,4 +2,5 @@ rootProject.name = 'gradle'
 include 'http'
 include 'jsp'
 include 'servlet'
+include 'velocity'
 
