@@ -3,4 +3,5 @@ include 'http'
 include 'jsp'
 include 'servlet'
 include 'velocity'
+include 'netty'
 
